@@ -21,6 +21,16 @@ This Python script converts invoice data from Excel files into PDF format. It us
 - glob
 - pathlib
 
+You can install the required libraries for this script using pip, which is a package manager for Python. Open your terminal and type the following commands:
+
+```bash
+pip install pandas
+pip install fpdf
+pip install glob2
+```
+
+Please note that `pathlib` is a standard library in Python 3, so you don't need to install it separately. Also, `glob` is a part of Python's standard library, but `glob2` is an enhanced version that you can install separately.
+
 ## Usage
 
 1. Place your Excel files in the "invoices" directory.
@@ -30,3 +40,5 @@ This Python script converts invoice data from Excel files into PDF format. It us
 ## License
 
 This project is licensed under the terms of the MIT license.
+
+## 
