@@ -39,6 +39,8 @@ for filepath in filepaths:
     pdf.cell(w=30, h=8, txt=columns[3], border=1)
     pdf.cell(w=30, h=8, txt=columns[4], border=1, ln=1)
 
+    
+    
     # Add rows to the table in the PDF
     for index, row in df.iterrows():
         pdf.set_font("Times", size=10)
@@ -48,6 +50,27 @@ for filepath in filepaths:
         pdf.cell(w=35, h=8, txt=str(row["amount_purchased"]), border=1)
         pdf.cell(w=30, h=8, txt=str(row["price_per_unit"]), border=1)
         pdf.cell(w=30, h=8, txt=str(row["total_price"]), border=1, ln=1)
+
+
+    # Calculate total price
+    total_price = df["total_price"].sum()
+    # Add total price to PDF
+    pdf.set_font("Times", size=12, style='B')
+    pdf.set_text_color(80, 80, 80)
+    pdf.cell(w=30, h=8, txt=str(" "), border=1)
+    pdf.cell(w=65, h=8, txt=str(" "), border=1)
+    pdf.cell(w=35, h=8, txt=str(" "), border=1)
+    pdf.cell(w=30, h=8, txt=str(" "), border=1)
+    pdf.cell(w=30, h=8, txt=str(total_price), border=1, ln=1)
+
+    # Add total price to PDF
+    pdf.set_font("Times", size=12, style='B')
+    pdf.cell(w=30, h=8, txt="The total price is: {}".format(total_price), ln=1)
+
+    # Add company information to PDF
+    pdf.set_font("Times", size=12, style='B')
+    pdf.cell(w=30, h=8, txt="WolflerPython")
+    pdf.image("logo.png", w=10)
 
     # Save the PDF to the "PDFs" directory
     pdf.output("PDFs/{}.pdf".format(filename))
