@@ -1,6 +1,9 @@
 
 
 # Invoice to PDF Converter
+<p align="center">
+  <img src="./main.png" alt="WaterMark App Screenshot">
+</p>
 
 This Python script converts invoice data from Excel files into PDF format. It uses the `glob`, `pandas`, `fpdf`, and `pathlib` libraries.
 
